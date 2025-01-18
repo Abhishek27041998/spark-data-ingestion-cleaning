@@ -1,0 +1,3 @@
+paths:
+  input_data: "data/raw/dataset.csv"
+  output_data: "data/processed/cleaned_dataset"
