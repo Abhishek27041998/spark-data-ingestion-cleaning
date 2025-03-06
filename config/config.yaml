@@ -1,3 +1,13 @@
-paths:
-  input_data: "data/raw/dataset.csv"
-  output_data: "data/processed/cleaned_dataset"
+input_data:
+  parent_dir: "data/raw/ml-latest-small"
+  movies_file_name: "movies.csv"
+  ratings_file_name: "ratings.csv"
+  links_file_name: "links.csv"
+  tags_file_name: "movies.csv"
+
+bronze_data:
+  parent_dir: "data/bronze"
+  movies_delta_dir: "movies"
+  ratings_delta_dir: "ratings"
+  links_delta_dir: "links"
+  tags_dir: "tags"
