@@ -1,3 +1,12 @@
 paths:
-  input_data: "data/raw/dataset.csv"
-  output_data: "data/processed/cleaned_dataset"
+  raw:
+    movies_csv: "data/raw/ml-latest-small/movies.csv"
+    links_csv: "data/raw/ml-latest-small/links.csv"
+    ratings_csv: "data/raw/ml-latest-small/ratings.csv"
+    tags_csv: "data/raw/ml-latest-small/tags.csv"
+
+  bronze:
+    movies: "data/bronze/movies"
+    links: "data/bronze/links"
+    ratings: "data/bronze/ratings"
+    tags: "data/bronze/tags"
