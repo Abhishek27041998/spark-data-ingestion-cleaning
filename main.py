@@ -1,13 +1,23 @@
 # This is the main function for running data ingestion and data cleaning
-from src.utils.logger import setup_logger
-from src.utils.config_loader import load_config
+
+import sys
+import os
+from src.bronze_processor.bronze_module import BronzeModule
+from src.utils.common_logger import setup_logger
+
 
 def main():
-    logger = setup_logger(name='data_ingestion_cleaning')
-    logger.info("Starting Ingestion of Movies Dataset")
+    logger = setup_logger(__name__)
+    config_path = os.path.join('config', 'config.yaml')
+    logger.info(f"Starting data ingestion and bronze processing with config: {config_path}")
+    try:
+        bronze = BronzeModule(config_path)
+        bronze.process_all()
+        logger.info("Bronze layer processing completed successfully.")
+    except Exception as e:
+        logger.exception(f"Pipeline failed: {e}")
+        sys.exit(1)
 
-    config = load_config()
-    logger.info(f"Read config file: {config}")
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
+
